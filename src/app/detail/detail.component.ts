@@ -18,7 +18,7 @@ export class DetailComponent {
 
   constructor(private http: HttpClient) {
     this.getJSON().subscribe(data => {
-      this.displayedColumns = ["Content", "type", "event"];
+      this.displayedColumns = ['Content', 'type', 'event'];
       this.dataSource = data;
 
     });
