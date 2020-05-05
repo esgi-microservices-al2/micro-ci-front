@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core';
 import { UsersModule } from './users';
 import { DetailComponent } from './detail/detail.component';
-import {MaterialModule} from "./shared/material";
+import {MaterialModule} from './shared/material';
 
 
 @NgModule({

@@ -2,8 +2,8 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { SharedModule } from '../shared';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import {MatMenuModule} from "@angular/material/menu";
-import {RouterModule} from "@angular/router";
+import {MatMenuModule} from '@angular/material/menu';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
