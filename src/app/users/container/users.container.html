@@ -2,3 +2,6 @@
   <ci-users-list fxFlex [users]="users" (selectedUser)="getSelectedUser($event)"></ci-users-list>
   <ci-user-details fxFlex [user]="selectedUser"></ci-user-details>
 </div>
+<div fxLayout fxFlexFill>
+  <app-project-command fxFlex [project]="fakeProject"></app-project-command>
+</div>
