@@ -1,0 +1,44 @@
+<!-- <mat-card class="card">
+
+  <mat-card-title>
+    <h3>Mails List</h3>
+  </mat-card-title>
+
+  <mat-card-content>
+
+    <div class="mat-elevation-z8 mails-list">
+      <div *ngFor="let e of mails; let i= index">
+
+
+        mail {{i}}: {{e.adresse}}
+   
+
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card> -->
+
+<mat-card class="card">
+
+  <mat-card-title>
+    <h3>Mails List</h3>
+  </mat-card-title>
+
+  <mat-card-content>
+
+    <div class="mat-elevation-z8 mails-list">
+    
+      <table mat-table [dataSource]="mails">
+        <ng-container matColumnDef="idmail">
+          <th mat-header-cell *matHeaderCellDef> Adresses Mail</th>
+          <td mat-cell *matCellDef="let e"> {{e.adresse}} </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let user; columns: columns;"class="row"></tr>
+      </table>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+

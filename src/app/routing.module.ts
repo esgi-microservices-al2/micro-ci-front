@@ -1,16 +1,21 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { UsersContainer } from './users';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+import {UsersContainer} from './users';
+import {AddMailAdresseComponent} from './adresse-mail';
+import {AdresseMailContainerComponent} from './adresse-mail';
 
+const routes: Routes = [
+  {path: '', component: UsersContainer},
+  //{path: 'mailConfig',component: AddMailAdresseComponent }
+  {path: 'mailConfig', component: AdresseMailContainerComponent},
+  {path: 'refresh', component: AdresseMailContainerComponent}
 
-const routes: Routes = [{
-  path: '',
-  component: UsersContainer
-}];
+];
 
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class RoutingModule { }
+export class RoutingModule {
+}

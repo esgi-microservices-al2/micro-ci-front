@@ -1,0 +1,33 @@
+<mat-card class="card">
+
+  <mat-card-title>
+    <h3>Add Mail</h3>
+  </mat-card-title>
+
+  <mat-card-content>
+
+    <div class="mat-elevation-z8 mails-add">
+      <div class="container">
+        <form (ngSubmit)="onSubmit()" class="form">
+          <mat-form-field appearance="fill" class="form-element">
+            <mat-label>Enter your email.</mat-label>
+            <input matInput placeholder="pat@example.com" [formControl]="email" required [(ngModel)]="newMail.adresse">
+            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+          </mat-form-field>
+          <div class="form-element">
+            <button mat-raised-button color="primary" type="submit" class="button" [disabled]="email.invalid">ADD</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+  </mat-card-content>
+</mat-card>
+
+
+
+
+
+
+ 

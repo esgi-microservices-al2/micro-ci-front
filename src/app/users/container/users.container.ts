@@ -1,8 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { UsersService } from '../services/users.service';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
-import { User } from '../model/user.model';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {UsersService} from '../services/users.service';
+import {Subject} from 'rxjs';
+import {takeUntil} from 'rxjs/operators';
+import {User} from '../model/user.model';
 
 @Component({
   templateUrl: './users.container.html'
@@ -17,7 +17,8 @@ export class UsersContainer implements OnInit, OnDestroy {
 
   constructor(
     private usersService: UsersService
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.usersService.getUsers()
