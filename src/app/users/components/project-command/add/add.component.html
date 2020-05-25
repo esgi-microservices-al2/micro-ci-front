@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>Delete all elements?</h2>
+<mat-dialog-content>
+  <form [formGroup]="addForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Programm</mat-label>
+      <input matInput placeholder="Programm" formControlName="programm">
+      <mat-hint>Programm used by the command</mat-hint>
+    </mat-form-field>
+    <p>Argument</p>
+    <div formArrayName="arguments">
+      <div *ngFor="let _ of arguments.controls; index as i">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ "N°" + i }}</mat-label>
+          <input matInput placeholder="Argument" [formControlName]="i" >
+        </mat-form-field>
+        <button mat-icon-button (click)="removeArgument()">
+          <mat-icon>clear</mat-icon>
+        </button>
+      </div>
+    </div>
+    <button mat-button (click)="addArgument()">Add argument</button>
+  </form>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="submit()" [disabled]="addForm.invalid">Save</button>
+  <!-- The mat-dialog-close directive optionally accepts a value as a result for the dialog. -->
+  <button mat-button [mat-dialog-close]="true">Delete</button>
+</mat-dialog-actions>
