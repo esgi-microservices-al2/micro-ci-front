@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UsersContainer } from './users';
+import {ProjectContainer} from './project';
 import {DetailComponent} from './detail/detail.component';
 
 const detailRoutes = [
@@ -14,16 +15,18 @@ const routes: Routes = [{
   path: '',
   component: UsersContainer,
   children: [
-    // Mobile 'Detail' Routes
-    // are children of the master...
     ...detailRoutes
   ]
 },
   ...detailRoutes,
-
-
-  { path: 'detail',
-    component: DetailComponent }
+{
+  path: '/project',
+  component: ProjectContainer
+},
+  {
+    path: 'detail',
+    component: DetailComponent
+  }
 
 ];
 

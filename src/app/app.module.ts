@@ -9,6 +9,7 @@ import { UsersModule } from './users';
 import { DetailComponent } from './detail/detail.component';
 import {MaterialModule} from './shared/material';
 import { BuildDetailComponent } from './build-detail/build-detail.component';
+import { ProjectModule } from './project';
 
 
 // @ts-ignore
@@ -26,8 +27,9 @@ import { BuildDetailComponent } from './build-detail/build-detail.component';
     UsersModule,
     MaterialModule,
     UsersModule,
-    FormsModule
-
+    FormsModule,
+    UsersModule,
+    ProjectModule
   ],
   providers: [],
   bootstrap: [AppContainer]
