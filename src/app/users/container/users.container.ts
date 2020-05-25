@@ -22,7 +22,7 @@ export class UsersContainer implements OnInit, OnDestroy {
   ) {
     this.fakeProject = {
       name: "Test",
-      id: "5eb0972f65079929a49b0133"
+      id: "5ecbfc29d53d243884b43acb"
     }
   }
 

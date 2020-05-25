@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   // apiUrl: 'http://localhost:8080/notification/'
   configuration: {
-    commandApi: "http://localhost"
+    commandApi: "http://localhost:3000"
   }
 };
 
