@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppContainer } from './app.container';
 import { RoutingModule } from './routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,6 +13,7 @@ import { BuildDetailComponent } from './build-detail/build-detail.component';
 
 
 
+// @ts-ignore
 @NgModule({
   declarations: [
     AppContainer,
@@ -22,14 +23,17 @@ import { BuildDetailComponent } from './build-detail/build-detail.component';
   imports: [
     BrowserModule,
     RoutingModule,
+
     BrowserAnimationsModule,
     CoreModule,
     UsersModule,
     MaterialModule,
     SidebarModule,
+    ReactiveFormsModule,
     FormsModule
   ],
   providers: [],
   bootstrap: [AppContainer]
 })
+
 export class AppModule { }
