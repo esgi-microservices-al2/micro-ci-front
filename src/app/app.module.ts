@@ -28,7 +28,6 @@ import { BuildDetailComponent } from './build-detail/build-detail.component';
     UsersModule,
     MaterialModule,
     SidebarModule,
-    ReactiveFormsModule,
     FormsModule
   ],
   providers: [],
