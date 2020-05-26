@@ -20,7 +20,7 @@ const routes: Routes = [{
 },
   ...detailRoutes,
 {
-  path: '/project',
+  path: 'project',
   component: ProjectContainer
 },
   {
