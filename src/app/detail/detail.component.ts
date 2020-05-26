@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
+import {Build} from '../Build';
+import {BUILS} from '../mock-build';
 
 
 @Component({
@@ -9,15 +10,22 @@ import { Observable } from 'rxjs';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss']
 })
-export class DetailComponent {
+export class DetailComponent  implements OnInit, OnDestroy {
   private json = 'assets/data.json';
   dataSource = [];
-  displayedColumns: string[] = [];
+  builds = BUILS;
+
+  selectedBuils: Build;
+
+  onSelect(build: Build): void {
+    this.selectedBuils = build;
+  }
+
+
   constructor(private http: HttpClient) {
     this.getJSON().subscribe(data => {
-      this.displayedColumns = ['Content', 'type', 'event'];
       this.dataSource = data;
-
+     // console.log(this.dataSource)
     });
   }
 
@@ -25,11 +33,13 @@ export class DetailComponent {
     return this.http.get(this.json);
   }
 
+  ngOnInit(): void {
+  }
+
+  ngOnDestroy(): void {
+  }
+
 
 }
-export interface PeriodicElement {
-  Content: string;
-  type: string;
-  event: string;
-}
+
 

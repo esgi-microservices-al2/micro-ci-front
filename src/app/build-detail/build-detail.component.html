@@ -1,0 +1,27 @@
+<div *ngIf="build">
+  <h3>{{build.data.buildType | uppercase}} Details</h3>
+  <div><span>id: </span>{{build.id}}</div>
+  <div>
+    <label>content:
+      <input [(ngModel)]="build.data.content" placeholder="name"/>
+    </label>
+  </div>
+  <div>
+    <label>result:
+      <input [(ngModel)]="build.data.result" placeholder="name"/>
+    </label>
+  </div>
+  <div>
+    <label>ProjectId:
+      <input [(ngModel)]="build.data.ProjectId" placeholder="name"/>
+    </label>
+  </div>
+
+  <div>
+    <label>buildType:
+      <input [(ngModel)]="build.data.buildType" placeholder="name"/>
+    </label>
+  </div>
+
+</div>
+
