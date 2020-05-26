@@ -10,7 +10,7 @@ const routes: Routes = [{
   component: UsersContainer
 },
 {
-  path: '/project',
+  path: 'project',
   component: ProjectContainer
 }];
 
