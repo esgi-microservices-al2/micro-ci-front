@@ -1,5 +1,5 @@
 <h3>Project command</h3>
-<button mat-flat-button color="primary" (click)="addCommand()">Add</button>
+<button mat-flat-button color="primary" (click)="addCommand()" *ngIf="!error || errorStatus === 404">Add</button>
 <div *ngIf="loading">Loading</div>
 <div *ngIf="error">{{ errorMessage }}</div>
 <table mat-table [dataSource]="commands">
