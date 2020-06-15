@@ -23,4 +23,18 @@ export class CommandService {
         timeout(8000)
       );
   }
+
+  addCommand(project: Command, projectId: string): Observable<Command> {
+    return this.http.post<ApiModel<Command>>(`${environment.configuration.commandApi}/jobs/${projectId}/command`, project)
+      .pipe(
+        map(command => command.data)
+      )
+  }
+
+  createCommand(projectId: string): Observable<Command> {
+    return this.http.post<ApiModel<Command>>(`${environment.configuration.commandApi}/jobs`, {project: projectId, script: []})
+      .pipe(
+        map(command => command.data)
+      )
+  }
 }

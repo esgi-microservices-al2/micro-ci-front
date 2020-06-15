@@ -1,4 +1,7 @@
 <h2 mat-dialog-title>Delete all elements?</h2>
+<div *ngIf="isError" class="alert alert-danger mt-2">
+  {{ error }}
+</div>
 <mat-dialog-content>
   <form [formGroup]="addForm">
     <mat-form-field appearance="outline">
@@ -13,7 +16,7 @@
           <mat-label>{{ "N°" + i }}</mat-label>
           <input matInput placeholder="Argument" [formControlName]="i" >
         </mat-form-field>
-        <button mat-icon-button (click)="removeArgument()">
+        <button mat-icon-button (click)="removeArgument(i)">
           <mat-icon>clear</mat-icon>
         </button>
       </div>

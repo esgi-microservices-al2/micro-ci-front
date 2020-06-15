@@ -17,6 +17,8 @@ export class ListComponent implements OnInit {
   commands: [Command];
   error = false;
   errorMessage: string;
+  errorStatus: number;
+
   loading = true;
   columns = ['program', 'arguments'];
 
@@ -26,14 +28,25 @@ export class ListComponent implements OnInit {
   ) { }
 
   addCommand() {
-    this.dialog.open(AddComponent, {
+    const dialog = this.dialog.open(AddComponent, {
       height: '400px',
       width: '600px',
+      data: {
+        project: this.project,
+        exist: !this.error && this.errorStatus === 404
+      }
     })
+
+    dialog.close(() => this.getCommands())
   }
 
   ngOnInit(): void {
     console.log('hello');
+
+    this.getCommands()
+  }
+
+  private getCommands() {
     this.commandService.getProjectCommand(this.project)
       .subscribe((element: [Command] ) => {
 
@@ -46,6 +59,7 @@ export class ListComponent implements OnInit {
         this.loading = false;
       }, (error: HttpErrorResponse) => {
         this.loading = false;
+        this.errorStatus = error.status;
         this.errorMessage =
           error.status == 404
             ? 'This project doesn\'t exists'
