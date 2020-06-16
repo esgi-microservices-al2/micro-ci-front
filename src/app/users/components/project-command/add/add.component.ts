@@ -8,7 +8,7 @@ import { Command } from 'src/app/users/model/command.model';
 import { map, flatMap, tap } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-command-add',
+  selector: 'ci-app-command-add',
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.scss']
 })
@@ -26,12 +26,10 @@ export class AddComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
-    console.log(this.project)
     this.addForm = this.formBuilder.group({
       programm: ['', Validators.required],
       arguments: this.formBuilder.array([])
-    })
+    });
   }
 
   addArgument() {
@@ -39,7 +37,7 @@ export class AddComponent implements OnInit {
     this.arguments.push(this.formBuilder.control('', Validators.required));
   }
 
-  removeArgument(index: number){
+  removeArgument(index: number) {
 
     this.arguments.removeAt(index);
   }
@@ -48,8 +46,9 @@ export class AddComponent implements OnInit {
 
     this.isError = false;
 
-    if(this.addForm.invalid)
+    if (this.addForm.invalid) {
       return;
+    }
 
     console.log(this.addForm.value);
 
@@ -60,16 +59,16 @@ export class AddComponent implements OnInit {
                       .pipe(
                         tap(() => this.project.exist = true),
                         flatMap(() => this.commandService.addCommand(this.addForm.value, this.project.project.id))
-                      )
+                      );
 
 
     ob.subscribe(
         command => this.dialogRef.close(command),
         error => {
           this.isError = true;
-          this.error = "Cannot insert your data"
+          this.error = 'Cannot insert your data';
         }
-      )
+      );
   }
 
   get arguments() {
