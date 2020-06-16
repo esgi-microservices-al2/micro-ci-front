@@ -12,7 +12,7 @@ export class UsersContainer implements OnInit, OnDestroy {
 
   users: User[];
   selectedUser: User;
-  fakeProject: Project
+  fakeProject: Project;
 
   // Manage Observable cancellation when component is destroyed : https://alligator.io/angular/takeuntil-rxjs-unsubscribe/
   private destroy$: Subject<boolean> = new Subject<boolean>();
@@ -21,9 +21,9 @@ export class UsersContainer implements OnInit, OnDestroy {
     private usersService: UsersService
   ) {
     this.fakeProject = {
-      name: "Test",
-      id: "5ecbfc29d53d243884b43acb"
-    }
+      name: 'Test',
+      id: '5ecbfc29d53d243884b43acb'
+    };
   }
 
   ngOnInit(): void {

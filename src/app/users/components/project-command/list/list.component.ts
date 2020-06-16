@@ -7,7 +7,7 @@ import { CommandService } from '../../../services/command.service';
 import {AddComponent} from '../add/add.component';
 
 @Component({
-  selector: 'app-command-list',
+  selector: 'ci-app-command-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
@@ -35,15 +35,15 @@ export class ListComponent implements OnInit {
         project: this.project,
         exist: !this.error && this.errorStatus === 404
       }
-    })
+    });
 
-    dialog.close(() => this.getCommands())
+    dialog.close(() => this.getCommands());
   }
 
   ngOnInit(): void {
     console.log('hello');
 
-    this.getCommands()
+    this.getCommands();
   }
 
   private getCommands() {
@@ -51,21 +51,22 @@ export class ListComponent implements OnInit {
       .subscribe((element: [Command] ) => {
 
         console.log(element);
-        if(element)
+        if (element) {
           this.commands = element;
-        else
+        } else {
           this.error = true;
+        }
 
         this.loading = false;
       }, (error: HttpErrorResponse) => {
         this.loading = false;
         this.errorStatus = error.status;
         this.errorMessage =
-          error.status == 404
+          error.status === 404
             ? 'This project doesn\'t exists'
             : 'An error occured';
         this.error = true;
-      })
+      });
   }
 
 }
