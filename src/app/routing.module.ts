@@ -6,7 +6,6 @@ import {AdresseMailContainerComponent} from './adresse-mail';
 
 const routes: Routes = [
   {path: '', component: UsersContainer},
-  //{path: 'mailConfig',component: AddMailAdresseComponent }
   {path: 'mailConfig', component: AdresseMailContainerComponent},
   {path: 'refresh', component: AdresseMailContainerComponent}
 

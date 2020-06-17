@@ -20,7 +20,6 @@ import {AdresseMailModule} from './adresse-mail';
     CoreModule,
     UsersModule,
     AdresseMailModule,
-    //AppContainer
   ],
   exports: [
     AppContainer
