@@ -15,7 +15,7 @@ export class CommandService {
 
   constructor(private http: HttpClient) {}
 
-  getProjectCommand(project: Project): Observable<[Command]> {
+  getProjectCommand(project: Project): Observable<Command[]> {
     return this.http.get<ApiModel<ProjectApi>>(`${environment.configuration.commandApi}/jobs/${project.id}`)
       .pipe(
         map(commands => commands.data),
@@ -36,5 +36,14 @@ export class CommandService {
       .pipe(
         map(command => command.data)
       );
+  }
+
+  updateCommand(project: Command[], projectId: string): Observable<Command[]> {
+    return this.http.patch<ApiModel<ProjectApi>>(`${environment.configuration.commandApi}/jobs/${projectId}`, {script: project})
+    .pipe(
+      map(commands => commands.data),
+      map(commands => commands.script),
+      timeout(8000)
+    );
   }
 }

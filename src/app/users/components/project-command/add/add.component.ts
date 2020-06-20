@@ -27,7 +27,7 @@ export class AddComponent implements OnInit {
 
   ngOnInit(): void {
     this.addForm = this.formBuilder.group({
-      programm: ['', Validators.required],
+      program: ['', Validators.required],
       arguments: this.formBuilder.array([])
     });
   }
@@ -49,9 +49,6 @@ export class AddComponent implements OnInit {
     if (this.addForm.invalid) {
       return;
     }
-
-    console.log(this.addForm.value);
-
 
     const ob = this.project.exist
                   ? this.commandService.addCommand(this.addForm.value, this.project.project.id)

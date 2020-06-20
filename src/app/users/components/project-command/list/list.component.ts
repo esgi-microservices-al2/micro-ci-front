@@ -14,13 +14,13 @@ import {AddComponent} from '../add/add.component';
 export class ListComponent implements OnInit {
 
   @Input() project: Project;
-  commands: [Command];
+  commands: Command[];
   error = false;
   errorMessage: string;
   errorStatus: number;
 
   loading = true;
-  columns = ['program', 'arguments'];
+  displayedColumns = ['program', 'arguments', 'action'];
 
   constructor(
     private commandService: CommandService,
@@ -33,24 +33,37 @@ export class ListComponent implements OnInit {
       width: '600px',
       data: {
         project: this.project,
-        exist: !this.error && this.errorStatus === 404
+        exist: !this.error || this.errorStatus === 404
       }
     });
 
-    dialog.close(() => this.getCommands());
+    dialog.afterClosed().subscribe(() => this.getCommands());
   }
 
   ngOnInit(): void {
-    console.log('hello');
-
     this.getCommands();
+  }
+
+  deleteCommand(index: number) {
+
+    this.loading = true;
+    const cloneCommand = this.commands.concat();
+    cloneCommand.splice(index, 1);
+
+    this.commandService.updateCommand(cloneCommand, this.project.id)
+      .subscribe(
+        element => {
+          this.commands = element;
+        }, error => {
+          this.error = true;
+          this.errorMessage = 'Cannot delete your command';
+        },
+        () => this.loading = false);
   }
 
   private getCommands() {
     this.commandService.getProjectCommand(this.project)
-      .subscribe((element: [Command] ) => {
-
-        console.log(element);
+      .subscribe(element => {
         if (element) {
           this.commands = element;
         } else {
