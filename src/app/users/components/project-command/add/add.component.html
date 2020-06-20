@@ -1,12 +1,14 @@
 <h2 mat-dialog-title>Delete all elements?</h2>
-<div *ngIf="isError" class="alert alert-danger mt-2">
-  {{ error }}
+<div *ngIf="isError" class="md-padding">
+    <mat-card class="alert alert-danger">
+      <mat-card-content>{{ error }}</mat-card-content>
+    </mat-card>
 </div>
 <mat-dialog-content>
   <form [formGroup]="addForm">
     <mat-form-field appearance="outline">
       <mat-label>Programm</mat-label>
-      <input matInput placeholder="Programm" formControlName="programm">
+      <input matInput placeholder="Programm" formControlName="program">
       <mat-hint>Programm used by the command</mat-hint>
     </mat-form-field>
     <p>Argument</p>
