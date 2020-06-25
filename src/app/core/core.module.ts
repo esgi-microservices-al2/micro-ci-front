@@ -2,7 +2,6 @@ import {NgModule, Optional, SkipSelf} from '@angular/core';
 import {SharedModule} from '../shared';
 import {HeaderComponent} from './components/header/header.component';
 import {FooterComponent} from './components/footer/footer.component';
-import {SideNavComponent} from './components/side-nav/side-nav.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {RouterModule} from '@angular/router';
 
@@ -10,7 +9,6 @@ import {RouterModule} from '@angular/router';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SideNavComponent
   ],
   imports: [
     SharedModule,
@@ -20,7 +18,6 @@ import {RouterModule} from '@angular/router';
   exports: [
     HeaderComponent,
     FooterComponent,
-    SideNavComponent
   ]
 })
 export class CoreModule {

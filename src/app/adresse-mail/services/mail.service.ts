@@ -14,21 +14,19 @@ export class MailService {
   private baseUrl: string;
   constructor(private http: HttpClient) {
 
-    //this.baseUrl = "http://localhost:8080/notification/";
+    // this.baseUrl = "http://localhost:8080/notification/";
     this.baseUrl = environment.apiUrl;
 
   }
 
 
   getAdressesMail(): Observable<Mail[]> {
-    return this.http.get<Mail[]>(this.baseUrl + "addresses");
+    return this.http.get<Mail[]>(this.baseUrl + 'addresses');
   }
 
 
-  addAdresse(mail: Object): Observable<Object> {
-    return this.http.post(this.baseUrl + "address", mail);
+  addAdresse(mail: Mail): Observable<any> {
+    return this.http.post(this.baseUrl + 'address', mail);
   }
-
-
 
 }

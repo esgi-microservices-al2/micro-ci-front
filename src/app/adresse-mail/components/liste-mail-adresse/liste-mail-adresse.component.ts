@@ -3,10 +3,10 @@ import { MailService } from '../../services/mail.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { Mail } from '../../model/mail.model';
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-liste-mail-adresse',
+  selector: 'ci-liste-mail-adresse',
   templateUrl: './liste-mail-adresse.component.html',
   styleUrls: ['./liste-mail-adresse.component.scss']
 })
@@ -24,14 +24,13 @@ export class ListeMailAdresseComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.getAdresses()
+    this.getAdresses();
   }
 
 
 
   getAdresses() {
     this.mailService.getAdressesMail()
-      //.pipe(takeUntil(this.destroy$))
       .subscribe(
         mails => this.mails = [...mails],
         error => console.error(error)

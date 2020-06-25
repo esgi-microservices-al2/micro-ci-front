@@ -13,7 +13,6 @@ export class UsersService {
   }
 
   getUsers(): Observable<User[]> {
-    //console.log("get service 10: ", this.http.get<User[]>('https://jsonplaceholder.typicode.com/users'));
-    return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users')
+    return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users');
   }
 }
