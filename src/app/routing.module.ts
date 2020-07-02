@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { UsersContainer } from './users';
 import {ProjectContainer} from './project';
 import {DetailComponent} from './detail/detail.component';
+import {FormComponent} from './project/components/form/form.component';
 
 const detailRoutes = [
   {
@@ -22,6 +23,13 @@ const routes: Routes = [{
 {
   path: 'project',
   component: ProjectContainer
+},
+  {
+    path: 'addProject',
+    component: FormComponent
+  }
+
+];
 },
   {
     path: 'detail',

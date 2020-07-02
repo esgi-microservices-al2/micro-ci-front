@@ -1,1 +1,17 @@
-<p>form works!</p>
+ <div class="projectForm">
+   <h1> Créer un project </h1>
+    <form [formGroup]="addProjectForm" (ngSubmit)="saveProject()">
+      <div class="form-group">
+        <input formControlName="name" type="text" id="name" class="form-control" placeholder="Nom du projet">
+      </div>
+
+        <div class="form-group">
+          <input formControlName="owner" type="text" id="owner" class="form-control" placeholder="Chef du projet">
+        </div>
+
+          <div class="form-group">
+            <input formControlName="source" type="text" id="source" class="form-control" placeholder="Source">
+          </div>
+      <button class="btn btn-primary" class="buttonStyle" type="submit">Créer un projet</button>
+    </form>
+    </div>

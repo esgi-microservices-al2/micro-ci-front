@@ -8,7 +8,7 @@ import { Project } from '../../model/project.model';
 })
 export class ProjectsListComponent {
 
-  columns: string[] = ['name', 'url', 'public', 'runner', 'owner', 'source'];
+  columns: string[] = ['name', 'url', 'public', 'runner', 'owner', 'source', 'delete'];
 
   @Input()
   projects: Project[];
