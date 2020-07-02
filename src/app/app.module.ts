@@ -7,11 +7,13 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CoreModule} from './core';
 import {UsersModule} from './users';
 import {AdresseMailModule} from './adresse-mail';
+import { JobComponent } from './job/job.component';
 
 
 @NgModule({
   declarations: [
-    AppContainer
+    AppContainer,
+    JobComponent
   ],
   imports: [
     BrowserModule,
