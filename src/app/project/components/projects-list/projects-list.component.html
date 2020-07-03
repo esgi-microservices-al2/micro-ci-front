@@ -36,7 +36,7 @@
         </ng-container>
         <ng-container matColumnDef="delete">
           <th mat-header-cell *matHeaderCellDef>Delete</th>
-          <td (click)="deleteProject(project._id)" mat-cell *matCellDef="let project"> {{project._id}}  </td>
+          <td (click)="deleteProject(project._id)" mat-cell *matCellDef="let project"> <button>Supprimer</button>  </td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>
         <tr mat-row *matRowDef="let project; columns: columns;" class="row"></tr>
