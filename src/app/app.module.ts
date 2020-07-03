@@ -8,7 +8,6 @@ import { CoreModule } from './core';
 import { UsersModule } from './users';
 import { DetailComponent } from './detail/detail.component';
 import {MaterialModule} from './shared/material';
-import { SidebarModule } from 'ng-sidebar';
 import { BuildDetailComponent } from './build-detail/build-detail.component';
 
 
@@ -22,16 +21,18 @@ import { BuildDetailComponent } from './build-detail/build-detail.component';
   imports: [
     BrowserModule,
     RoutingModule,
-
     BrowserAnimationsModule,
     CoreModule,
     UsersModule,
     MaterialModule,
-    SidebarModule,
+    UsersModule,
     FormsModule
+
   ],
   providers: [],
   bootstrap: [AppContainer]
 })
 
+
 export class AppModule { }
+

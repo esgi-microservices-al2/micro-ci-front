@@ -1,0 +1,32 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Mail } from '../model/mail.model';
+import { map } from 'rxjs/operators';
+import { environment } from '../../../environments/environment.prod';
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class MailService {
+
+  private baseUrl: string;
+  constructor(private http: HttpClient) {
+
+    // this.baseUrl = "http://localhost:8080/notification/";
+    this.baseUrl = environment.apiUrl;
+
+  }
+
+
+  getAdressesMail(): Observable<Mail[]> {
+    return this.http.get<Mail[]>(this.baseUrl + 'addresses');
+  }
+
+
+  addAdresse(mail: Mail): Observable<any> {
+    return this.http.post(this.baseUrl + 'address', mail);
+  }
+
+}

@@ -1,1 +1,1 @@
-export { MaterialModule } from './material.module';
+export {MaterialModule} from './material.module';

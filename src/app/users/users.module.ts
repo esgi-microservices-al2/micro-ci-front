@@ -3,6 +3,8 @@ import { SharedModule } from '../shared';
 import { UsersContainer } from './container/users.container';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { ListComponent as CommandListComponent } from './components/project-command/list/list.component';
+import { AddComponent as CommandAddComponent } from './components/project-command/add/add.component';
 
 
 @NgModule({
@@ -10,10 +12,13 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
     UsersContainer,
 
     UsersListComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    CommandListComponent,
+    CommandAddComponent
   ],
   imports: [
     SharedModule
   ]
 })
-export class UsersModule { }
+export class UsersModule {
+}

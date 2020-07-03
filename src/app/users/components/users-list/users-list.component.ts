@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { User } from '../../model/user.model';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {User} from '../../model/user.model';
 
 @Component({
   selector: 'ci-users-list',
