@@ -1,9 +1,11 @@
-import {NgModule, Optional, SkipSelf} from '@angular/core';
-import {SharedModule} from '../shared';
-import {HeaderComponent} from './components/header/header.component';
-import {FooterComponent} from './components/footer/footer.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { SharedModule } from '../shared';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import {MatMenuModule} from '@angular/material/menu';
 import {RouterModule} from '@angular/router';
+
+
 
 @NgModule({
   declarations: [
@@ -12,7 +14,7 @@ import {RouterModule} from '@angular/router';
   ],
   imports: [
     SharedModule,
-    MatSidenavModule,
+    MatMenuModule,
     RouterModule
   ],
   exports: [

@@ -1,0 +1,17 @@
+
+<div ng-app="myApp" ng-controller="customersCtrl" id="detail">
+  <h1> BUILS</h1>
+
+  <table>
+    <th> id </th>
+    <th> result </th>
+    <tr *ngFor="let build of builds"
+        [class.selected]="build === selectedBuils"
+        (click)="onSelect(build)">
+      <td>{{ build.id }}</td>
+      <td>{{build.data.result}}</td> </tr>
+  </table>
+</div>
+
+<ci-app-build-detail [build]="selectedBuils"></ci-app-build-detail>
+

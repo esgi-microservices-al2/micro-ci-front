@@ -1,13 +1,29 @@
-import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
-import {UsersContainer} from './users';
-import {AddMailAdresseComponent} from './adresse-mail';
-import {AdresseMailContainerComponent} from './adresse-mail';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { UsersContainer } from './users';
+import {DetailComponent} from './detail/detail.component';
 
-const routes: Routes = [
-  {path: '', component: UsersContainer},
-  {path: 'mailConfig', component: AdresseMailContainerComponent},
-  {path: 'refresh', component: AdresseMailContainerComponent}
+const detailRoutes = [
+  {
+    path: 'detail/:id',
+    component: DetailComponent
+  }
+];
+
+const routes: Routes = [{
+  path: '',
+  component: UsersContainer,
+  children: [
+    // Mobile 'Detail' Routes
+    // are children of the master...
+    ...detailRoutes
+  ]
+},
+  ...detailRoutes,
+
+
+  { path: 'detail',
+    component: DetailComponent }
 
 ];
 

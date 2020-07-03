@@ -1,0 +1,32 @@
+[
+  {
+    "idBuild": "1234556",
+    "data": {
+      "content": "bablalala",
+      "buildType": "InProgress",
+      "result": "Inprogresse",
+      "ProjectId": "commande"
+    }
+  },
+
+  {
+    "idBuild": "QSDFGH",
+    "data": {
+      "content": "bablalala",
+      "buildType": "done",
+      "result": "faild",
+      "ProjectId": "commande"
+    }
+  },
+
+  {
+    "idBuild": "AZERTY",
+    "data": {
+      "content": "bablalala",
+      "buildType": "done",
+      "result": "succces",
+      "ProjectId": "commande"
+    }
+  }
+
+]
