@@ -1,1 +1,23 @@
-<p>job works!</p>
+<h3>Job list</h3>
+<br>
+<button type="button">Add Job</button>
+<br>
+<br>
+<table>
+  <thead>
+    <tr>
+      <th>Cron Expression</th>
+      <th>Id project</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr  *ngFor="let job of joblist; let i= index" >
+        <td>{{job.cronexpression}}</td>
+        <td>{{job.idproject}}</td>
+        <td>{{job.name}}</td>
+      </tr>
+  </tbody>
+</table>
+<br>
+<hr>
