@@ -1,6 +1,5 @@
 export interface Job {
-    cronexpression: string;
-    idproject: number;
-    name: string;
-  }
-  
+  cronexpression: string;
+  idproject: number;
+  name: string;
+} 

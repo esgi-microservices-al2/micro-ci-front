@@ -8,27 +8,24 @@ import { Job } from '../users/model/job.model';
 })
 export class JobComponent implements OnInit {
 
-  //joblist: Job[];
+  // joblist: Job[];
 
   joblist = [
     {
-      cronexpression: "test",
+      cronexpression: 'test',
       idproject: 1,
-      name: "test",
+      name: 'test',
     },
   ];
 
   constructor() { }
 
   ngOnInit(): void {
-    /*this.jobService.getJobs()
+    /* this.jobService.getJobs()
       .pipe(takeUntil(this.destroy$))
       .subscribe(
         job => this.joblist = [...jobs],
         error => console.error(error)
-      );*/
-    
+      ); */
   }
-
-
 }
