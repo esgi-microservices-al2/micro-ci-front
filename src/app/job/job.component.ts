@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Job } from '../users/model/job.model';
 
 @Component({
-  selector: 'app-job',
+  selector: 'ci-app-job',
   templateUrl: './job.component.html',
   styleUrls: ['./job.component.scss']
 })
