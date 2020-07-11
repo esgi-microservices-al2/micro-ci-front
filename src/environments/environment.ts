@@ -8,6 +8,8 @@ export const environment = {
   configuration: {
     commandApi: 'http://localhost:3000'
   }
+  apiProject: '`http://localhost:8081/api/v1/projects/',
+  production: false
 };
 
 /*

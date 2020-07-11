@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Project } from '../model/project.model';
 import {CreateProject} from '../model/createProject.model';
 import {map} from 'rxjs/operators';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -19,12 +20,12 @@ export class ProjectsService {
   }
 
   getProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>('http://localhost:8081/api/v1/projects/projects', {headers:
+    return this.http.get<Project[]>(`${environment.apiProject}projects`, {headers:
         {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' } });
   }
 
   updateProject(project: Project, id: BigInteger) {
-    return this.http.put(`http://localhost:8081/api/v1/projects/${id}`, project, {headers:
+    return this.http.put(`${environment.apiProject}${id}`, project, {headers:
         {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' } }).subscribe( data => {
         console.log('Post réussi', data);
       },
@@ -34,7 +35,7 @@ export class ProjectsService {
   }
 
   getOneProject(id: number): Observable<Project> {
-    return this.http.get<Project>(`http://localhost:8081/api/v1/projects/${id}`, {observe: 'response'})
+    return this.http.get<Project>(`${environment.apiProject}${id}`, {observe: 'response'})
       .pipe(map(res => {
         console.log(res);
         return res.body;
@@ -43,7 +44,7 @@ export class ProjectsService {
 
   deleteProject(id: number) {
     console.log('Delete : ' + id);
-    const url = `http://localhost:8081/api/v1/projects/${id}`;
+    const url = `${environment.apiProject}${id}`;
     return this.http.delete(url, {responseType: 'text'}
     ).subscribe(data => {
       console.log(data);
@@ -51,7 +52,7 @@ export class ProjectsService {
   }
 
   createProject(project: CreateProject) {
-    return this.http.post('http://localhost:8081/api/v1/projects/', project, {headers:
+    return this.http.post(`${environment.apiProject}`, project, {headers:
         {'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' } }).subscribe( data => {
         console.log('Post réussi', data);
       },
