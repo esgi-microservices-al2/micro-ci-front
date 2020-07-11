@@ -1,0 +1,38 @@
+<mat-card *ngIf="project">
+
+  <form [formGroup]="updateFormProject" (ngSubmit)="updateProject()">
+
+    <div class="projectForm">
+      <mat-card-title>
+        <h3>Project {{project.name}}</h3>
+      </mat-card-title>
+
+      <mat-card-subtitle>
+        <input [ngModel]="project.name" formControlName="name" type="text"  />
+      </mat-card-subtitle>
+
+      <mat-card-subtitle>
+        <input [ngModel]="project.url" formControlName="url" type="text" />
+      </mat-card-subtitle>
+
+      <mat-card-subtitle>
+        <input [ngModel]="project.owner" formControlName="owner" type="text"  />
+      </mat-card-subtitle>
+
+      <mat-card-subtitle>
+        <input [ngModel]="project.source" formControlName="source" type="text" />
+      </mat-card-subtitle>
+
+      <mat-card-subtitle>
+        <input [ngModel]="project.runner" formControlName="runner" type="text"  />
+      </mat-card-subtitle>
+
+      <button class="btn btn-primary" class="buttonStyle" type="submit">Modifier</button>
+
+    </div>
+  </form>
+
+
+
+</mat-card>
+
