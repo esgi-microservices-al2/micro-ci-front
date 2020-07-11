@@ -3,11 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
   // apiUrl: 'http://localhost:8080/notification/'
   configuration: {
     commandApi: 'http://localhost:3000'
-  }
+  },
   apiProject: '`http://localhost:8081/api/v1/projects/',
   production: false
 };

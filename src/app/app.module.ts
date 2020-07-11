@@ -7,6 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core';
 import { UsersModule } from './users';
 import { ProjectModule } from './project';
+import {BuildDetailComponent} from './build-detail/build-detail.component';
+import {DetailComponent} from './detail/detail.component';
+import {MaterialModule} from "./shared/material";
+import {FormsModule} from "@angular/forms";
 
 
 // @ts-ignore
@@ -25,7 +29,6 @@ import { ProjectModule } from './project';
     MaterialModule,
     UsersModule,
     FormsModule,
-    UsersModule,
     ProjectModule
   ],
   providers: [],
