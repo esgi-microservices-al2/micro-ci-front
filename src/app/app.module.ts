@@ -9,8 +9,8 @@ import { UsersModule } from './users';
 import { ProjectModule } from './project';
 import {BuildDetailComponent} from './build-detail/build-detail.component';
 import {DetailComponent} from './detail/detail.component';
-import {MaterialModule} from "./shared/material";
-import {FormsModule} from "@angular/forms";
+import {MaterialModule} from './shared/material';
+import {FormsModule} from '@angular/forms';
 
 
 // @ts-ignore
