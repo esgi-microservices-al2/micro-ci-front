@@ -1,46 +1,35 @@
-import {Build} from './Build';
+import {Events} from './Events';
 
-export const BUILS: Build[] = [
-  {
-    id: 1234556,
-    data: {
-      buildType: 'InProgress',
-      content: 'baababbababaabbabababb',
-      ProjectId: 'commande',
-      result: 'nprogresse '
-    }
-  },
+export const EVENTS: Events[] =
+  [
+    {
+      _id: '5f011143346b20002a2d0131',
+      projectId: 'project_1',
+      buildId: 'build_3',
+      date: '2020-05-24T21:04:24.281Z',
+      content: 'Deployed successfully',
+      type: 'success'},
 
-  {
-    id: 123456789076543,
-    data: {
-      buildType: 'done',
-      content: 'baababbababaabbabababb ',
-      ProjectId: 'QSDFGHJ ',
-      result: 'faild '
-    }
-  },
+    {
+      _id: '5f09e3e0baae5700400df0c2',
+      projectId: 'project_1',
+      buildId: 'build_3',
+      date: '2020-05-24T21:04:24.281Z',
+      content: 'Deployed successfully',
+      type: 'success'
+    },
 
-  {
-    id: 123456712345432434543,
-    data: {
-      buildType: 'done',
-      content: 'baababbababaabbabababb',
-      ProjectId: 'commande',
-      result: 'faild'
-    }
-  },
+    {_id: '5f09e59f174c62002b088224',
+      projectId: 'project_1',
+      buildId: 'build_3',
+      date: '2020-05-24T21:04:24.281Z',
+      content: 'Deployed successfully',
+      type: 'success'},
 
-  {
-    id: 12,
-    data: {
-      buildType: 'done',
-      content: 'baababbababaabbabababb ',
-      ProjectId: 'commande',
-      result: 'sucsses '
-    }
-  }
-
-
-
-];
+    {_id: '5f09e5a9174c62002b088225',
+      projectId: 'project_1',
+      buildId: 'build_3',
+      date: '2020-05-24T21:04:24.281Z',
+      content: 'Deployed successfully',
+      type: 'success'}
+      ];

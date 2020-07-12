@@ -4,12 +4,14 @@
 
   <table>
     <th> id </th>
-    <th> result </th>
-    <tr *ngFor="let build of builds"
-        [class.selected]="build === selectedBuils"
-        (click)="onSelect(build)">
-      <td>{{ build.id }}</td>
-      <td>{{build.data.result}}</td> </tr>
+  <th> result </th>
+  <tr *ngFor="let build of events"
+      [class.selected]="build === selectedBuils"
+      (click)="onSelect(build)">
+    <td>{{ build.projectId }}</td>
+    <td>{{ build.buildId }}</td>
+    <td>{{build.date}}</td>
+  </tr>
   </table>
 </div>
 

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Build} from '../Build';
+import {Events} from '../Events';
 
 @Component({
   selector: 'ci-app-build-detail',
@@ -7,7 +7,7 @@ import {Build} from '../Build';
   styleUrls: ['./build-detail.component.scss']
 })
 export class BuildDetailComponent implements OnInit {
-  @Input() build: Build;
+  @Input() build: Events;
 
   constructor() { }
 

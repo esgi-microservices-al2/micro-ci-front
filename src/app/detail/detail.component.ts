@@ -2,7 +2,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {Build} from '../Build';
-import {BUILS} from '../mock-build';
+import {EVENTS} from '../mock-build';
+import {Events} from '../Events';
 
 
 @Component({
@@ -13,12 +14,12 @@ import {BUILS} from '../mock-build';
 export class DetailComponent  implements OnInit, OnDestroy {
   private json = 'assets/data.json';
   dataSource = [];
-  builds = BUILS;
+  events = EVENTS;
 
-  selectedBuils: Build;
+  selectedBuils: Events;
 
-  onSelect(build: Build): void {
-    this.selectedBuils = build;
+  onSelect(event: Events): void {
+    this.selectedBuils = event;
   }
 
 

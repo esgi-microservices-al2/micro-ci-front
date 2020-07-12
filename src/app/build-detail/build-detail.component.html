@@ -1,32 +1,13 @@
 <div *ngIf="build" id="detail">
   <br>   <br>
   <br>
-  <!--
-    <h3>{{build.data.buildType | uppercase}} Details</h3>
-  -->
-  <div >
-    <span>id: </span>{{build.id}}</div>
-  <div>
-    <label>content:
-      <input [(ngModel)]="build.data.content"class="form__field" placeholder="name"/>
-    </label>
-  </div>
-  <div>
-    <label>result:
-      <input [(ngModel)]="build.data.result" class="form__field"placeholder="name"/>
-    </label>
-  </div>
-  <div>
-    <label>ProjectId:
-      <input [(ngModel)]="build.data.ProjectId" class="form__field"placeholder="name"/>
-    </label>
-  </div>
 
-  <div>
-    <label>buildType:
-      <input [(ngModel)]="build.data.buildType" placeholder="name" class="form__field"/>
-    </label>
-  </div>
+  <div class="details"><span class="sp">id: </span>{{build._id}}</div>
+  <div class="details"><span class="sp">buildId: </span>{{build.buildId}}</div>
+  <div class="details"><span class="sp">content: </span>{{build.content}}</div>
+  <div class="details"><span class="sp">date: </span>{{build.date}}</div>
+  <div class="details"><span class="sp">projectId: </span>{{build.projectId}}</div>
+
 
 </div>
 
