@@ -3,7 +3,7 @@ export interface Job {
   cronexpression: string;
   idproject: number;
   name: string;
-  createdAt: string,
-  updatedAt: string,
-  deletedAt: string
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: string;
 }
