@@ -9,12 +9,19 @@ export interface PeriodicElement {
 }
 
 @Component({
-  selector: 'app-detail',
+  selector: 'ci-app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent {
-  private _jsonURL = 'assets/data.json';
+  private jsonURL = 'assets/data.json';
+  dataSource = [];
+  displayedColumns: string[] = [];
+
+  public getJSON(): Observable<any> {
+    return this.http.get(this.jsonURL);
+  }
+
 
   constructor(private http: HttpClient) {
     this.getJSON().subscribe(data => {
@@ -24,10 +31,5 @@ export class DetailComponent {
     });
   }
 
-  public getJSON(): Observable<any> {
-    return this.http.get(this._jsonURL);
-  }
-  dataSource = [];
-  displayedColumns: string[] = [];
 }
 
