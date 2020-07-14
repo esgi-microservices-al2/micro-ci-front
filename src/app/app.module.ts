@@ -8,7 +8,6 @@ import { CoreModule } from './core';
 import { UsersModule } from './users';
 import { DetailComponent } from './detail/detail.component';
 import {MaterialModule} from './shared/material';
-import { BuildDetailComponent } from './build-detail/build-detail.component';
 
 
 // @ts-ignore
@@ -16,7 +15,6 @@ import { BuildDetailComponent } from './build-detail/build-detail.component';
   declarations: [
     AppContainer,
     DetailComponent,
-    BuildDetailComponent
   ],
   imports: [
     BrowserModule,
