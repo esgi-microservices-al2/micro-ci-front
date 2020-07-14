@@ -9,13 +9,21 @@
       <th>Cron Expression</th>
       <th>Id project</th>
       <th>Name</th>
+      <th>Id project</th>
+      <th>Created At</th>
+      <th>Updated At</th>
+      <th>Deleted At</th>
     </tr>
   </thead>
   <tbody>
       <tr  *ngFor="let job of joblist; let i= index" >
-        <td>{{job.cronexpression}}</td>
-        <td>{{job.idproject}}</td>
-        <td>{{job.name}}</td>
+        <td>{{job.ID}}</td>
+        <td>{{job.CronExpression}}</td>
+        <td>{{job.Name}}</td>
+        <td>{{job.IdProject}}</td>
+        <td>{{job.CreatedAt}}</td>
+        <td>{{job.UpdatedAt}}</td>
+        <td>{{job.DeletedAt}}</td>
       </tr>
   </tbody>
 </table>

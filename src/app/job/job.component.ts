@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Job } from '../users/model/job.model';
+import { Job } from './model/job.model';
+import { JobService } from './service/job.service';
 
 @Component({
   selector: 'ci-app-job',
@@ -8,24 +9,34 @@ import { Job } from '../users/model/job.model';
 })
 export class JobComponent implements OnInit {
 
-  // joblist: Job[];
+  joblist: Job[];
 
-  joblist = [
+  /*joblist = [
     {
       cronexpression: 'test',
       idproject: 1,
       name: 'test',
     },
-  ];
+  ];*/
 
-  constructor() { }
+  constructor(private jobService: JobService) { }
 
   ngOnInit(): void {
-    /* this.jobService.getJobs()
-      .pipe(takeUntil(this.destroy$))
+      this.getJobList();
+    /*
+    this.jobService.getJobs()
+      // .pipe(takeUntil(this.destroy$))
       .subscribe(
-        job => this.joblist = [...jobs],
+        job => this.joblist = [...job],
         error => console.error(error)
-      ); */
+      );*/
+  }
+
+  getJobList() {
+    this.jobService.getJobs()
+      .subscribe(res => {
+        this.joblist = res;
+        console.log(res);
+      });
   }
 }
