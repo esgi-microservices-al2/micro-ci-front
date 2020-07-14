@@ -1,46 +1,35 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {Build} from '../Build';
-import {EVENTS} from '../mock-build';
-import {Events} from '../Events';
 
+export interface PeriodicElement {
+  Content: string;
+  type: string;
+  event: string;
+}
 
 @Component({
   selector: 'ci-app-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss']
 })
-export class DetailComponent  implements OnInit, OnDestroy {
-  private json = 'assets/data.json';
+export class DetailComponent {
+  private jsonURL = 'assets/data.json';
   dataSource = [];
-  events = EVENTS;
+  displayedColumns: string[] = [];
 
-  selectedBuils: Events;
-
-  onSelect(event: Events): void {
-    this.selectedBuils = event;
+  public getJSON(): Observable<any> {
+    return this.http.get(this.jsonURL);
   }
 
 
   constructor(private http: HttpClient) {
     this.getJSON().subscribe(data => {
+      this.displayedColumns = ['projectId', 'buildId', 'date', 'content' , 'type'];
       this.dataSource = data;
-     // console.log(this.dataSource)
+
     });
   }
 
-  public getJSON(): Observable<any> {
-    return this.http.get(this.json);
-  }
-
-  ngOnInit(): void {
-  }
-
-  ngOnDestroy(): void {
-  }
-
-
 }
-
 

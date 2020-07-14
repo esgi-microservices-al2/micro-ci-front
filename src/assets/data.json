@@ -1,32 +1,14 @@
 [
-  {
-    "idBuild": "1234556",
-    "data": {
-      "content": "bablalala",
-      "buildType": "InProgress",
-      "result": "Inprogresse",
-      "ProjectId": "commande"
-    }
+  {"projectId":"project_1",
+    "buildId":"build_3",
+    "date":"2020-05-24T21:04:24.281Z",
+    "content":"Deployed successfully",
+    "type":"success"
   },
-
-  {
-    "idBuild": "QSDFGH",
-    "data": {
-      "content": "bablalala",
-      "buildType": "done",
-      "result": "faild",
-      "ProjectId": "commande"
-    }
-  },
-
-  {
-    "idBuild": "AZERTY",
-    "data": {
-      "content": "bablalala",
-      "buildType": "done",
-      "result": "succces",
-      "ProjectId": "commande"
-    }
+  {"projectId":"project_1",
+    "buildId":"build_3",
+    "date":"2020-05-24T21:04:24.281Z",
+    "content":"Deployed successfully",
+    "type":"success"
   }
-
 ]
