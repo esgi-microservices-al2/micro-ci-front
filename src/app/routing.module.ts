@@ -38,9 +38,8 @@ const routes: Routes = [{
   {
     path: 'detail',
     component: DetailComponent
-  },
-  {path: 'mailConfig', component: AdresseMailContainerComponent},
-  {path: 'refresh', component: AdresseMailContainerComponent}                   
+  }      
+                        
 ];
 
 
