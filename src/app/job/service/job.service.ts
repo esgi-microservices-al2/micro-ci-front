@@ -14,4 +14,8 @@ export class JobService {
   getJobs(): Observable<Job[]> {
     return this.http.get<Job[]>('http://localhost:8080/job');
   }
+
+  addJob() {
+    // return this.http.post('http://localhost:8080/job');
+  }
 }

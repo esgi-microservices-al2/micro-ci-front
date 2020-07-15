@@ -36,7 +36,17 @@ export class JobComponent implements OnInit {
     this.jobService.getJobs()
       .subscribe(res => {
         this.joblist = res;
+        /* for (var job of this.joblist) {
+          if (job.deletedAt == null) {
+            job.deletedAt = 'Never';
+          }
+        } */ 
         console.log(res);
       });
+  }
+
+  test() {
+
+    console.log('success');
   }
 }
