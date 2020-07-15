@@ -38,8 +38,7 @@ const routes: Routes = [{
   {
     path: 'detail',
     component: DetailComponent
-  }      
-                        
+  }                      
 ];
 
 
