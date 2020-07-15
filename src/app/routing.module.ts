@@ -45,9 +45,7 @@ const routes: Routes = [{
   },
   {
     path: 'refresh',
-    component: AdresseMailContainerComponent
-  }                      
-
+    component: AdresseMailContainerComponent}                      
 ];
 
 
