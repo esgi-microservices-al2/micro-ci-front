@@ -33,11 +33,14 @@ export class ListComponent implements OnInit {
       width: '600px',
       data: {
         project: this.project,
-        exist: !this.error || this.errorStatus === 404
+        exist: !(this.errorStatus === 404 && this.error)
       }
     });
 
-    dialog.afterClosed().subscribe(() => this.getCommands());
+    dialog.afterClosed().subscribe(() => {
+      this.getCommands();
+      this.error = false;
+    });
   }
 
   ngOnInit(): void {
