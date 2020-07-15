@@ -14,7 +14,7 @@ export interface PeriodicElement {
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent {
-  private jsonURL = 'assets/data.json';
+  private jsonURL = 'http://micro-ci.westus2.cloudapp.azure.com:40503/event/build/build_3/events';
   dataSource = [];
   displayedColumns: string[] = [];
 
