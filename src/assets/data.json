@@ -1,14 +1,26 @@
 [
-  {"projectId":"project_1",
-    "buildId":"build_3",
-    "date":"2020-05-24T21:04:24.281Z",
-    "content":"Deployed successfully",
-    "type":"success"
+  {
+    "_id": "5f00d27f3c3b250011c274f5",
+    "projectId": "project_1",
+    "buildId": "build_3",
+    "date": "2020-05-24T21:04:24.281Z",
+    "content": "Deployed successfully",
+    "type": "success"
   },
-  {"projectId":"project_1",
-    "buildId":"build_3",
-    "date":"2020-05-24T21:04:24.281Z",
-    "content":"Deployed successfully",
-    "type":"success"
+  {
+    "_id": "5f0117011708a00012b87c74",
+    "projectId": "project_1",
+    "buildId": "build_3",
+    "date": "2020-05-24T21:04:24.281Z",
+    "content": "Deployed successfully",
+    "type": "success"
+  },
+  {
+    "_id": "5f09e87f627a800011a0aca9",
+    "projectId": "project_1",
+    "buildId": "build_3",
+    "date": "2020-05-24T21:04:24.281Z",
+    "content": "Deployed successfully",
+    "type": "success"
   }
 ]
