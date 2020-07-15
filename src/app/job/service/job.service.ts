@@ -9,7 +9,6 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 export class JobService {
 
   job: any;
-  url: string = 'http://localhost:8080/job';
 
   constructor(private http: HttpClient) {
   }
@@ -19,7 +18,7 @@ export class JobService {
   }
 
   addJob(nameInput: string, cronExpressionInput: string, idProjectInput: string) {
-    const body = { cronexpression: cronExpressionInput, idproject: idProjectInput, name: nameInput }
+    const body = { cronexpression: cronExpressionInput, idproject: idProjectInput, name: nameInput };
     this.http.post<Job>('http://localhost:8080/job', body).subscribe();
   }
 
