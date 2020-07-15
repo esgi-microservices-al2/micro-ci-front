@@ -5,8 +5,6 @@ import {ProjectContainer} from './project';
 import {DetailComponent} from './detail/detail.component';
 import {FormComponent} from './project/components/form/form.component';
 import {ProjectDetailsComponent} from './project/components/project-details/project-details.component';
-import {AddMailAdresseComponent} from './adresse-mail';
-import {AdresseMailContainerComponent} from './adresse-mail';
 
 const detailRoutes = [
   {
@@ -38,7 +36,8 @@ const routes: Routes = [{
   {
     path: 'detail',
     component: DetailComponent
-  }                      
+  }
+
 ];
 
 
