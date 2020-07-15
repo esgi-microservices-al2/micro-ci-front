@@ -5,7 +5,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CommandService } from 'src/app/users/services/command.service';
 import { Project } from 'src/app/users/model/project.model';
 import { Command } from 'src/app/users/model/command.model';
-import { map, flatMap, tap } from 'rxjs/operators';
+import { map, mergeMap, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'ci-app-command-add',
@@ -55,13 +55,14 @@ export class AddComponent implements OnInit {
                   : this.commandService.createCommand(this.project.project.id)
                       .pipe(
                         tap(() => this.project.exist = true),
-                        flatMap(() => this.commandService.addCommand(this.addForm.value, this.project.project.id))
+                        mergeMap(() => this.commandService.addCommand(this.addForm.value, this.project.project.id))
                       );
 
 
     ob.subscribe(
         command => this.dialogRef.close(command),
         error => {
+          console.log(error);
           this.isError = true;
           this.error = 'Cannot insert your data';
         }
