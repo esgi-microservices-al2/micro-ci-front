@@ -8,6 +8,7 @@ import {CoreModule} from './core';
 import {UsersModule} from './users';
 import {AdresseMailModule} from './adresse-mail';
 import { JobComponent } from './job/job.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { JobComponent } from './job/job.component';
     CoreModule,
     UsersModule,
     AdresseMailModule,
+    FormsModule
   ],
   exports: [
     AppContainer

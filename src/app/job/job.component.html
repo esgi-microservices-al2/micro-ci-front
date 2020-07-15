@@ -1,19 +1,14 @@
 <h3>Add Job</h3>
 <br>
-<!--form>
-  <label for="cronexpression">Cron Expression :</label>
-  <input type="text" id="cronexpression" name="cronexpression" value="testtttttt">
-  <label for="name">Name :</label>
-  <input type="text" id="name" name="name" value="Doe">
-  <button type="submit" class="btn btn-success" (click)="test()">Submit</button>
-</form--> 
-
-<label for="cronexpression">Cron Expression :</label>
-<input type="text" id="cronexpression" name="cronexpression" value="testtttttt">
-<label for="name">Name :</label>
-<input type="text" id="name" name="name" value="Doe">
-<button type="submit" class="btn btn-success" (click)="test()">Submit</button>
-
+<form>
+  <label for="idIdproject">Id project :</label>
+  <input [(ngModel)]="idProjectInput" type="number" id="idIdproject" name="idProjectInput" value="505">
+  <label for="idCronExpression">Cron Expression :</label>
+  <input  [(ngModel)]="cronExpressionInput" type="text" id="idCronExpression" name="cronExpressionInput" value="testtttttt">
+  <label for="idNameInput">Name :</label>
+  <input [(ngModel)]="nameInput" type="text" id="idNameInput" name="nameInput" value="Doe">
+  <button type="submit" class="btn btn-success" (click)="addJob()">Submit</button>
+</form>
 <br>
 <br>
 <h3>Job list</h3>

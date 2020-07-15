@@ -10,43 +10,26 @@ import { JobService } from './service/job.service';
 export class JobComponent implements OnInit {
 
   joblist: Job[];
-
-  /*joblist = [
-    {
-      cronexpression: 'test',
-      idproject: 1,
-      name: 'test',
-    },
-  ];*/
+  job: Job;
+  nameInput: string;
+  cronExpressionInput: string;
+  idProjectInput: string;
 
   constructor(private jobService: JobService) { }
 
   ngOnInit(): void {
-      this.getJobList();
-    /*
-    this.jobService.getJobs()
-      // .pipe(takeUntil(this.destroy$))
-      .subscribe(
-        job => this.joblist = [...job],
-        error => console.error(error)
-      );*/
+    this.getJobList();
   }
 
   getJobList() {
     this.jobService.getJobs()
       .subscribe(res => {
         this.joblist = res;
-        /* for (var job of this.joblist) {
-          if (job.deletedAt == null) {
-            job.deletedAt = 'Never';
-          }
-        } */ 
         console.log(res);
       });
   }
 
-  test() {
-
-    console.log('success');
+  addJob() {
+    this.jobService.addJob(this.nameInput, this.cronExpressionInput, this.idProjectInput);
   }
 }
